@@ -48,23 +48,29 @@ In Python, a **'for'** loop allows code to be executed repeatedly for each item 
 
 ## Remove IP addresses that are on the remove list
 
-My algorithm needs to remove any IP address from the ip_addresses list that is also present in the remove_list. Since there were no duplicates in ip_addresses, I used the following approach:
+My algorithm needs to remove any IP address from the **'ip_addresses'** list that is also present in the **'remove_list'**. Since there were no duplicates in **'ip_addresses'**, I used the following approach:
 
-Inside the for loop, I set up a condition to check if the current element from the loop was in the ip_addresses list. This step was crucial to avoid errors, as attempting to remove elements not found in ip_addresses would cause issues.
+<img width="531" alt="Screenshot 2024-08-13 at 13 30 48" src="https://github.com/user-attachments/assets/efc29257-3a48-4415-b032-4d23d7918ca6">
 
-Within this condition, I used the .remove() method on ip_addresses. I passed the loop variable element as the argument, ensuring that each IP address found in the remove_list was removed from ip_addresses.
+Inside the for loop, I set up a condition to check if the current element from the loop was in the **'ip_addresses list'**. This step was crucial to avoid errors, as attempting to remove elements not found in **'ip_addresses'** would cause issues.
+
+Within this condition, I used the **'.remove()'** method on **'ip_addresses'**. I passed the loop variable element as the argument, ensuring that each IP address found in the **'remove_list'** was removed from **'ip_addresses'**£.
 
 ## Update the file with the revised list of IP addresses
 
-As the final step of my algorithm, I needed to update the allow list file with the new list of IP addresses. To achieve this, I first converted the list back into a string using the .join() method:
+As the final step of my algorithm, I needed to update the allow list file with the new list of IP addresses. To achieve this, I first converted the list back into a string using the **'.join()'** method:
 
-The .join() method merges all items in an iterable into a single string. It is used with a string that defines the separator between the elements of the iterable. In this case, I used the .join() method to transform the ip_addresses list into a string so it could be passed to the .write() method for updating the "allow_list.txt" file. I chose "\n" as the separator to ensure each IP address appears on a new line.
+<img width="625" alt="Screenshot 2024-08-13 at 13 34 20" src="https://github.com/user-attachments/assets/cfb236ca-7c88-425d-96fd-1f4699479780">
 
-Subsequently, I used another with statement along with the .write() method to update the file:
+The **'.join()'** method merges all items in an iterable into a single string. It is used with a string that defines the separator between the elements of the iterable. In this case, I used the **'.join()'** method to transform the **'ip_addresses'** list into a string so it could be passed to the **'.write()'** method for updating the **"allow_list.txt"** file. I chose **"\n"** as the separator to ensure each IP address appears on a new line.
 
-In this instance, I used the "w" mode with the open() function within the with statement, indicating that the file should be opened for writing and its contents replaced. This allowed me to use the .write() function to output the new string data to "allow_list.txt", thereby updating the file with the revised IP addresses. The .write() function replaced the old content with the updated ip_addresses data, ensuring that any removed IP addresses no longer had access.
+Subsequently, I used another with statement along with the **'.write()'** method to update the file:
+
+<img width="430" alt="Screenshot 2024-08-13 at 13 34 51" src="https://github.com/user-attachments/assets/bf905c83-970b-4bd5-b59b-13339298486c">
+
+In this instance, I used the **"w"** mode with the **'.open()'** function within the with statement, indicating that the file should be opened for writing and its contents replaced. This allowed me to use the **'.write()'** function to output the new string data to **"allow_list.txt"**, thereby updating the file with the revised IP addresses. The **'.write()'** function replaced the old content with the updated **'ip_addresses'** data, ensuring that any removed IP addresses no longer had access.
 
 # Summary
 
-I developed an algorithm to remove IP addresses listed in a remove_list variable from the "allow_list.txt" file, which contains approved IP addresses. The algorithm involved opening the file and reading its contents as a string, which was then converted into a list stored in the ip_addresses variable. I iterated through the IP addresses in the remove_list, checking each one to see if it was in the ip_addresses list. If an IP address was found, I used the .remove() method to delete it from the ip_addresses list. Finally, I employed the .join() method to convert the updated ip_addresses list back into a string and overwrite the "allow_list.txt" file with the revised list of IP addresses.
+I developed an algorithm to remove IP addresses listed in a **'remove_list'** variable from the **"allow_list.txt"** file, which contains approved IP addresses. The algorithm involved opening the file and reading its contents as a string, which was then converted into a list stored in the **'ip_addresses variable'**. I iterated through the IP addresses in the **'remove_list'**, checking each one to see if it was in the **'ip_addresses'** list. If an IP address was found, I used the **'.remove()'** method to delete it from the **'ip_addresses'** list. Finally, I employed the **'.join()'** method to convert the updated **'ip_addresses'** list back into a string and overwrite the **"allow_list.txt"** file with the revised list of IP addresses.
 
