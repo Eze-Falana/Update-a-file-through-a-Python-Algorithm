@@ -2,7 +2,7 @@
 ## Project Overview
 In my organisation, access to restricted content is managed through an **'allow list'** of IP addresses, which is specified in the **"allow_list.txt"** file. Additionally, a separate remove list details IP addresses that should be denied access. I developed an algorithm to automate the process of updating the **"allow_list.txt"** by removing IP addresses that are no longer authorised to access the content.
 
-## Open the file that contains the aloow list
+## Open the file that contains the allow list
 
 In the initial part of the algorithm, I accessed the **'allow_list.txt'** file. I first assigned this file name as a string to the **'import_file'** variable:
 
@@ -18,25 +18,33 @@ In this algorithm, the **'with'** statement is used in conjunction with the '**.
 
 ## Read the file contents
 
-To read the contents of the file, I used the .read() method to convert it into a string.
+To read the contents of the file, I used the **'.read()'** method to convert it into a string.
 
-When using the .open() function with the "r" argument for reading, the .read() method can be called within the with statement. This method transforms the file content into a string, enabling me to access it. I applied the .read() method to the file variable defined in the with statement and then stored the resulting string in the ip_addresses variable.
+<img width="622" alt="Screenshot 2024-08-13 at 11 52 34" src="https://github.com/user-attachments/assets/cf48a26a-1c72-4a34-af38-3504d1622dce">
 
-In summary, this code reads the contents of the "allow_list.txt" file into a string format, which I can then use to organise and extract data within my Python program.
+When using the **'.open()'** function with the **"r"** argument for reading, the **'.read()'** method can be called within the with statement. This method transforms the file content into a string, enabling me to access it. I applied the **'.read()"** method to the file variable defined in the with statement and then stored the resulting string in the ip_addresses variable.
+
+In summary, this code reads the contents of the **"allow_list.txt"** file into a string format, which I can then use to organise and extract data within my Python program.
 
 ## Convert the string into a list
 
 To remove individual IP addresses from the allow list, I needed to convert it into a list format. I achieved this by using the .split() method to turn the ip_addresses string into a list.
 
+<img width="527" alt="Screenshot 2024-08-13 at 11 59 39" src="https://github.com/user-attachments/assets/40a0f03a-7061-4b21-a766-d62562c04a6c">
 
-The .split() method is applied to a string variable and transforms its contents into a list. This conversion simplifies the task of removing IP addresses from the allow list. By default, .split() divides the text by whitespace into separate list elements. In this process, the .split() method takes the ip_addresses string, where each IP address is separated by whitespace, and converts it into a list of IP addresses. I then reassigned this list back to the ip_addresses variable.
+
+The **'.split()'** method is applied to a string variable and transforms its contents into a list. This conversion simplifies the task of removing IP addresses from the **'allow list'**. By default, **'.split()'** divides the text by whitespace into separate list elements. In this process, the **'.split()'** method takes the **'ip_addresses'** string, where each IP address is separated by whitespace, and converts it into a list of IP addresses. I then reassigned this list back to the **'ip_addresses'** variable.
 
 ## Iterate through the remove list
 
 
-A crucial part of my algorithm involves iterating through the IP addresses listed in the remove_list. For this, I used a for loop:
+A crucial part of my algorithm involves iterating through the IP addresses listed in the **'remove_list'**. For this, I used a **'for'** loop:
 
-In Python, a for loop allows code to be executed repeatedly for each item in a sequence. The purpose of the for loop in this context is to apply specific operations to every element within the sequence. The for keyword initiates the loop, followed by the loop variable element and the keyword in. The in keyword directs the loop to go through each item in the ip_addresses sequence and assign each value to the element variable.
+
+<img width="319" alt="Screenshot 2024-08-13 at 12 01 42" src="https://github.com/user-attachments/assets/dd835655-9ed1-4a1d-9d62-c4dcc1e01bf3">
+
+
+In Python, a **'for'** loop allows code to be executed repeatedly for each item in a sequence. The purpose of the **'for'** loop in this context is to apply specific operations to every element within the sequence. The for keyword initiates the loop, followed by the loop variable element and the keyword **'in'**. The **'in'** keyword directs the loop to go through each item in the **'ip_addresses'** sequence and assign each value to the element variable.
 
 ## Remove IP addresses that are on the remove list
 
